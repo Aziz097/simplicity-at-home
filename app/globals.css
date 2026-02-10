@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors */
+  --color-indigo-deep: #1B263B;
+  --color-cream-silk: #FDFCF0;
+  --color-gold-muted: #C0A080;
+  --color-text-dark: #1A1A1A;
+  --color-text-light: #FDFCF0;
+
+  /* Seasonal Colors */
+  --color-spring-green: #8FBC8F;
+  --color-summer-blue: #87CEEB;
+  --color-autumn-orange: #D2691E;
+  --color-winter-gray: #778899;
+
+  /* Typography */
+  --font-zen: 'Ten Mincho', serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  /* Animation */
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
+  --animate-season-transition: seasonTransition 0.5s ease-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  100% {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes seasonTransition {
+  0% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-cream-silk);
+    color: var(--color-text-dark);
+    font-family: var(--font-inter);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-zen);
+    color: var(--color-indigo-deep);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+/* Utility Classes */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@utility seasonal-transition {
+  transition-property: background-color, color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-deep focus:text-cream-silk focus:rounded-md;
 }
