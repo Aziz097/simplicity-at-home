@@ -82,7 +82,7 @@ export function Hero() {
                             <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-indigo-deep)]/20 to-transparent z-10 pointer-events-none mix-blend-multiply" />
 
                             <Image
-                                src="/book_cover.jpg"
+                                src="/book_cover.webp"
                                 alt="Simplicity at Home Book Cover"
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"

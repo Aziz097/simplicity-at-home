@@ -26,7 +26,7 @@ const seasons: SeasonTab[] = [
         id: 'spring',
         label: 'Spring',
         color: 'var(--color-spring-green)',
-        image: ('/spring.png'),
+        image: ('/spring.webp'),
         title: 'Cleansing & Renewal',
         description: 'As nature awakens, we clear away the heaviness of winter. Focus on deep cleaning, organizing, and welcoming fresh energy into your home.',
         rituals: ['Morning Air Ventilation', 'Decluttering Wardrobe', 'Fresh Flower Arrangements']
@@ -35,7 +35,7 @@ const seasons: SeasonTab[] = [
         id: 'summer',
         label: 'Summer',
         color: 'var(--color-summer-blue)',
-        image: ('/summer.png'),
+        image: ('/summer.webp'),
         title: 'Coolness & Flow',
         description: 'Create a sanctuary from the heat. Embrace breathable fabrics, minimalist arrangements, and rituals that promote air circulation and mental clarity.',
         rituals: ['Using Linen Textiles', 'Coldbrew Tea Rituals', 'Wind Chime Meditation']
@@ -44,7 +44,7 @@ const seasons: SeasonTab[] = [
         id: 'autumn',
         label: 'Autumn',
         color: 'var(--color-autumn-orange)',
-        image: ('/autumn.png'),
+        image: ('/autumn.webp'),
         title: 'Warmth & Gathering',
         description: 'As days shorten, we turn inward. Prepare your home for cozy gatherings, layering textures, and celebrating the harvest with warm, earthy tones.',
         rituals: ['Candle Lighting at Dusk', 'Seasonal Soup Recipes', 'Dried Flower Displays']
@@ -53,7 +53,7 @@ const seasons: SeasonTab[] = [
         id: 'winter',
         label: 'Winter',
         color: 'var(--color-winter-gray)',
-        image: ('/winter.png'),
+        image: ('/winter.webp'),
         title: 'Rest & Reflection',
         description: 'The season of deep rest. Transform your home into a cocoon of comfort with soft lighting, warm baths, and quiet corners for reading and reflection.',
         rituals: ['Yuzu Bath Ritual', 'Hot Pot Dining', 'Journaling by Lamplight']

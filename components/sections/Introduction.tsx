@@ -45,7 +45,7 @@ export function Introduction() {
 
                     <div className="relative mx-auto w-48 h-48 md:w-full md:h-auto md:aspect-square rounded-full md:rounded-lg overflow-hidden border-4 border-white shadow-lg rotate-3 transition-transform hover:rotate-0 duration-500">
                         <Image
-                            src="/author.jpg"
+                            src="/author.webp"
                             alt={YUMIKO_CREDENTIALS.name}
                             fill
                             className="object-cover"

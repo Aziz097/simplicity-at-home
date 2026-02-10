@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
     shortName: 'Simplicity at Home',
     description: 'Discover timeless Japanese rituals, recipes, and arrangements to cultivate calm in your everyday life. A beautiful guide by Yumiko Sekine, founder of Fog Linen Work.',
     url: 'https://simplicity-at-home.com',
-    ogImage: '/book_cover.jpg',
+    ogImage: '/book_cover.webp',
 };
 
 export const LINKS = {
