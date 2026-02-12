@@ -4,6 +4,7 @@ import "./globals.css";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { QuickCheckoutToast } from '@/components/ui/QuickCheckoutToast';
 import { SITE_CONFIG } from '@/constants';
 
 const zenFont = Shippori_Mincho({
@@ -108,6 +109,7 @@ export default function RootLayout({
         <JsonLd />
         {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
         {children}
+        <QuickCheckoutToast />
       </body>
     </html>
   );
