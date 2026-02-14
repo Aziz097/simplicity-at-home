@@ -46,20 +46,11 @@ export function FinalCTA() {
                             <div className="flex flex-col gap-3 pt-2">
                                 <Button
                                     as="a"
-                                    href={LINKS.gumroad}
+                                    href={LINKS.lynk}
                                     size="lg"
                                     className="w-full text-base md:text-lg h-14 bg-[var(--color-indigo-deep)] text-[var(--color-cream-silk)] hover:bg-[var(--color-indigo-deep)]/90 font-bold shadow-lg"
                                 >
-                                    Buy on Gumroad
-                                </Button>
-                                <Button
-                                    as="a"
-                                    href={LINKS.etsy}
-                                    size="lg"
-                                    variant="outline"
-                                    className="w-full text-base md:text-lg h-14 border-[var(--color-indigo-deep)]/30 text-[var(--color-indigo-deep)] hover:bg-[var(--color-indigo-deep)]/5 font-bold hover:text-[var(--color-indigo-deep)]/80"
-                                >
-                                    Buy on Etsy
+                                    Get Your Copy
                                 </Button>
                                 <Text className="text-xs text-center text-[var(--color-text-dark)]/50 pt-2">
                                     30-Day Money-Back Guarantee

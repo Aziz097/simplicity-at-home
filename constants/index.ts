@@ -9,6 +9,7 @@ export const SITE_CONFIG = {
 export const LINKS = {
     gumroad: 'https://gumroad.com/l/simplicity-at-home',
     etsy: 'https://www.etsy.com/listing/simplicity-at-home',
+    lynk: 'https://lynk.id/chroniclelabs/pvxnqogrjpp0',
     instagram: 'https://instagram.com/foglinenwork',
 };
 

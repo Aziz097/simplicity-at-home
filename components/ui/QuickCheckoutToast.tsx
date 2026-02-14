@@ -69,26 +69,15 @@ export function QuickCheckoutToast() {
                                 </div>
                             </div>
 
-                            <div className="flex gap-2 mt-1">
-                                <Link
-                                    href={LINKS.gumroad}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[var(--color-gold-muted)] hover:bg-[#A88B6A] text-[var(--color-indigo-deep)] text-xs font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95"
-                                >
-                                    <ExternalLink size={12} />
-                                    Gumroad
-                                </Link>
-                                <Link
-                                    href={LINKS.etsy}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-transparent border border-[var(--color-cream-silk)]/30 hover:bg-[var(--color-cream-silk)]/10 text-[var(--color-cream-silk)] text-xs font-medium rounded-lg transition-all duration-200 active:scale-95"
-                                >
-                                    <ExternalLink size={12} />
-                                    Etsy
-                                </Link>
-                            </div>
+                            <Link
+                                href={LINKS.lynk}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[var(--color-gold-muted)] hover:bg-[#A88B6A] text-[var(--color-indigo-deep)] text-xs font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95"
+                            >
+                                <ExternalLink size={12} />
+                                Get Your Copy
+                            </Link>
                         </div>
                     </div>
                 </motion.div>
