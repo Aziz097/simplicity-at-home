@@ -41,16 +41,16 @@ export function ProblemValidation() {
                 <div className="grid gap-8 md:grid-cols-3">
                     {PAIN_POINTS.map((point, index) => (
                         <Card key={index} className="border-none shadow-lg bg-white/50 hover:bg-white transition-colors duration-300">
-                            <CardHeader className="space-y-4 text-center items-center pt-8">
-                                <div className="w-16 h-16 rounded-full bg-[var(--color-indigo-deep)]/5 flex items-center justify-center mb-4">
-                                    <point.icon className="w-8 h-8 text-[var(--color-indigo-deep)]" />
+                            <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 pt-6 px-6">
+                                <div className="w-12 h-12 rounded-full bg-[var(--color-indigo-deep)]/5 flex items-center justify-center shrink-0">
+                                    <point.icon className="w-6 h-6 text-[var(--color-indigo-deep)]" />
                                 </div>
-                                <CardTitle className="text-2xl font-[var(--font-zen)] text-[var(--color-indigo-deep)]">
+                                <CardTitle className="text-xl font-[var(--font-zen)] text-[var(--color-indigo-deep)] text-left">
                                     {point.title}
                                 </CardTitle>
                             </CardHeader>
-                            <CardContent className="text-center pb-8 px-6">
-                                <Text className="text-[var(--color-text-dark)]/80">
+                            <CardContent className="text-left px-6 pb-6">
+                                <Text className="text-[var(--color-text-dark)]/80 text-[length:var(--font-size-mobile-body)] md:text-base">
                                     {point.description}
                                 </Text>
                             </CardContent>

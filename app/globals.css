@@ -26,6 +26,15 @@
   --animate-fade-in: fadeIn 0.8s ease-out forwards;
   --animate-slide-up: slideUp 0.8s ease-out forwards;
   --animate-season-transition: seasonTransition 0.5s ease-out;
+
+  /* Mobile Optimization Variables */
+  --spacing-section-mobile: 3rem;
+  --spacing-section-desktop: 5rem;
+  --font-size-mobile-h1: 2.25rem;
+  --font-size-mobile-h2: 1.75rem;
+  --font-size-mobile-h3: 1.5rem;
+  --font-size-mobile-body: 0.9375rem;
+  --spacing-mobile-gap: 1rem;
 }
 
 /* Keyframe Animations */
@@ -118,4 +127,13 @@
 
 @utility skip-link {
   @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-deep focus:text-cream-silk focus:rounded-md;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

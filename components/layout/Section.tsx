@@ -22,7 +22,7 @@ export function Section({
     return (
         <section
             className={cn(
-                'py-16 md:py-24 relative overflow-hidden',
+                'py-[var(--spacing-section-mobile)] md:py-[var(--spacing-section-desktop)] relative overflow-hidden',
                 backgrounds[background],
                 className
             )}

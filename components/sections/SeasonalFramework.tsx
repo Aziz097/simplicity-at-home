@@ -64,7 +64,7 @@ export function SeasonalFramework() {
     const [activeSeason, setActiveSeason] = useState<Season>('spring');
 
     return (
-        <Section background="cream" id="framework" className="min-h-[80vh] flex flex-col justify-center py-20">
+        <Section background="cream" id="framework" className="min-h-[80vh] flex flex-col justify-center">
             <Container>
                 <div className="text-center mb-12 space-y-4">
                     <Text variant="small" className="text-[var(--color-gold-muted)] uppercase tracking-widest font-bold">
@@ -78,14 +78,14 @@ export function SeasonalFramework() {
                     </Text>
                 </div>
 
-                {/* Season Tabs */}
-                <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+                {/* Season Tabs - Scrollable on mobile */}
+                <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible justify-start md:justify-center gap-3 md:gap-4 mb-8 md:mb-12 pb-4 md:pb-0 px-4 -mx-4 md:mx-auto scrollbar-hide snap-x">
                     {seasons.map((season) => (
                         <button
                             key={season.id}
                             onClick={() => setActiveSeason(season.id)}
                             className={cn(
-                                'relative px-6 py-3 rounded-full font-medium transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold-muted)]',
+                                'relative px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold-muted)] whitespace-nowrap snap-center shrink-0',
                                 activeSeason === season.id
                                     ? 'text-[var(--color-cream-silk)] shadow-lg scale-105'
                                     : 'bg-white text-[var(--color-text-dark)] hover:bg-[var(--color-cream-silk)] hover:scale-105 border border-[var(--color-indigo-deep)]/10'
@@ -107,8 +107,8 @@ export function SeasonalFramework() {
                     ))}
                 </div>
 
-                {/* Content Panel - Using CSS Grid for stacking instead of full absolute positioning to allow height growth */}
-                <div className="max-w-4xl mx-auto relative grid grid-cols-1">
+                {/* Content Panel */}
+                <div className="max-w-4xl mx-auto relative grid grid-cols-1 px-4 md:px-0">
                     <AnimatePresence mode="wait">
                         {seasons.map((season) => (
                             activeSeason === season.id && (
@@ -120,9 +120,9 @@ export function SeasonalFramework() {
                                     transition={{ duration: 0.4, ease: "easeOut" }}
                                     className="col-start-1 row-start-1 w-full"
                                 >
-                                    <Card className="min-h-[400px] md:min-h-[350px] bg-white border-none shadow-2xl overflow-hidden grid md:grid-cols-2">
-                                        {/* Visual Side */}
-                                        <div className="h-48 md:h-auto min-h-[200px] relative overflow-hidden flex items-center justify-center">
+                                    <Card className="min-h-[auto] md:min-h-[350px] bg-white border-none shadow-2xl overflow-hidden grid md:grid-cols-2 rounded-2xl md:rounded-3xl">
+                                        {/* Visual Side - Compact on Mobile */}
+                                        <div className="h-32 md:h-auto min-h-[140px] md:min-h-[200px] relative overflow-hidden flex items-center justify-center">
                                             {/* Background Image */}
                                             <Image
                                                 src={season.image}
@@ -130,9 +130,10 @@ export function SeasonalFramework() {
                                                 fill
                                                 className="object-cover transition-transform duration-700 hover:scale-105"
                                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                                priority
                                             />
 
-                                            {/* Overlay for text readability */}
+                                            {/* Overlay */}
                                             <div
                                                 className="absolute inset-0 z-10 opacity-60 mix-blend-multiply"
                                                 style={{ backgroundColor: season.color }}
@@ -143,40 +144,40 @@ export function SeasonalFramework() {
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: 0.2 }}
-                                                className="text-center relative z-20 text-white"
+                                                className="text-center relative z-20 text-white transform md:translate-y-0 translate-y-2"
                                             >
-                                                <span className="text-6xl md:text-8xl font-[var(--font-zen)] opacity-40 block mb-2">
+                                                <span className="text-5xl md:text-8xl font-[var(--font-zen)] opacity-40 block mb-1 md:mb-2 leading-none">
                                                     {season.label.charAt(0)}
                                                 </span>
-                                                <span className="text-lg font-medium tracking-[0.2em] uppercase border-t border-white/30 pt-4 inline-block">
+                                                <span className="text-sm md:text-lg font-medium tracking-[0.2em] uppercase border-t border-white/30 pt-2 md:pt-4 inline-block">
                                                     {season.label}
                                                 </span>
                                             </motion.div>
                                         </div>
 
-                                        {/* Content Side */}
-                                        <div className="p-8 md:p-12 flex flex-col justify-center">
-                                            <Heading as="h3" className="text-3xl mb-4" style={{ color: season.color }}>
+                                        {/* Content Side - Tighter Padding on Mobile */}
+                                        <div className="p-5 md:p-12 flex flex-col justify-center">
+                                            <Heading as="h3" className="text-xl md:text-3xl mb-3 md:mb-4 font-bold" style={{ color: season.color }}>
                                                 {season.title}
                                             </Heading>
-                                            <Text className="mb-8 text-[var(--color-text-dark)]/80 leading-relaxed">
+                                            <Text className="mb-6 md:mb-8 text-[var(--color-text-dark)]/80 leading-relaxed text-[length:var(--font-size-mobile-body)] md:text-base">
                                                 {season.description}
                                             </Text>
 
                                             <div>
-                                                <Text variant="small" className="text-[var(--color-text-dark)]/40 uppercase tracking-widest mb-3 block">
+                                                <Text variant="small" className="text-[var(--color-text-dark)]/40 uppercase tracking-widest mb-2 md:mb-3 block text-xs md:text-sm font-bold">
                                                     Key Rituals
                                                 </Text>
-                                                <ul className="space-y-2">
+                                                <ul className="space-y-2 md:space-y-3">
                                                     {season.rituals.map((ritual, idx) => (
                                                         <motion.li
                                                             key={idx}
                                                             initial={{ opacity: 0, x: -10 }}
                                                             animate={{ opacity: 1, x: 0 }}
                                                             transition={{ delay: 0.3 + (idx * 0.1) }}
-                                                            className="flex items-center gap-3 text-[var(--color-text-dark)]"
+                                                            className="flex items-center gap-3 text-[var(--color-text-dark)] text-sm md:text-base"
                                                         >
-                                                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: season.color }} />
+                                                            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: season.color }} />
                                                             {ritual}
                                                         </motion.li>
                                                     ))}

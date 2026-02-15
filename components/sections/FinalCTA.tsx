@@ -10,7 +10,7 @@ import { LINKS, PRICING, BONUS_OFFER } from '@/constants';
 
 export function FinalCTA() {
     return (
-        <Section background="cream" id="final-cta" className="relative overflow-hidden py-20 pb-32">
+        <Section background="cream" id="final-cta" className="relative overflow-hidden pb-32">
             <Container className="relative z-10 max-w-4xl text-center space-y-10">
                 <div className="space-y-4">
                     <Heading as="h2" className="text-4xl md:text-5xl lg:text-6xl">

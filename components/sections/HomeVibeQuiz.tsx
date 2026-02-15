@@ -91,7 +91,7 @@ export function HomeVibeQuiz() {
     };
 
     return (
-        <Section background="indigo" id="quiz" className="min-h-[70vh] flex items-center py-20">
+        <Section background="indigo" id="quiz" className="min-h-[70vh] flex items-center">
             <Container className="max-w-2xl">
                 <div className="text-center mb-10">
                     <Text variant="small" className="text-[var(--color-gold-muted)] uppercase tracking-widest font-bold">
